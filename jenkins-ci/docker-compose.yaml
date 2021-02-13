@@ -17,5 +17,17 @@ services:
       - ci-network
     restart: unless-stopped
 
+  nexus:
+    image: sonatype/nexus3
+    container_name: nexus
+    hostname: nexus
+    volumes:
+      - "nexus-data:/nexus-data"
+    ports:
+      - "${NEXUS_PORT}:8081"
+
 networks:
   ci-network: {}
+
+volumes:
+  nexus-data:
