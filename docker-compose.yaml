@@ -23,6 +23,7 @@ services:
     build:
       context: .
       dockerfile: ./restaurantapi/Dockerfile
+      image: ctomas65/restaurantapi
     container_name: restaurantapi
     hostname: restaurantapi
     environment:
@@ -34,4 +35,4 @@ services:
       - mongodb
 
 volumes:
-  mongo-volume:
+  mongo-volume: {}
